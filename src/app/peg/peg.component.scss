@@ -1,0 +1,32 @@
+.peg {
+    border: 1px solid grey;
+    margin: 8px;
+    box-shadow: 2px 2px;
+    display: inline-block;
+}
+
+.peg.peg-code {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 25px;
+}
+
+.peg.peg-key {
+    height: 1rem;
+    width: 1rem;
+    border-radius: 10px;
+}
+
+@mixin peg-bg-color($color){
+    .peg.peg-#{$color} {
+        background: #{$color};
+    }
+}
+
+@each $color in 'red', 'purple', 'blue', 'green', 'yellow', 'orange', 'black', 'white' {
+    @include peg-bg-color($color);
+}
+
+.peg.peg-unset {
+    background: #dbdbdb;
+}

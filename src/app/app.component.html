@@ -1,0 +1,19 @@
+<main class="container-fluid">
+    <section class="current-guess-container text-center mb-3">
+        <div class="current-guess-row">
+            <mm-peg *ngFor="let color of currentGuess; index as i" type="code" [color]="color" (pegClick)="removeColorFromCurrentGuess(i)"></mm-peg>
+        </div>
+        <div class="colorpicker">
+            <mm-peg *ngFor="let color of possibleValues" type="code" [color]="color" (pegClick)="addColorToCurrentGuess(color)"></mm-peg>
+        </div>
+        <button class="btn btn-primary" [disabled]="currentGuess.indexOf('unset') !== -1" (click)="guess()">Guess!</button>
+    </section>
+    <section class="guesses-container">
+        <div *ngFor="let guess of guesses" class="guess-row text-center">
+            <mm-peg *ngFor="let color of guess.colors" type="code" [color]="color"></mm-peg>
+            <div class="keys-container">
+                <mm-peg *ngFor="let key of guess.keys" type="key" [color]="key"></mm-peg>
+            </div>
+        </div>
+    </section>
+</main>

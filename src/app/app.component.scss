@@ -1,0 +1,33 @@
+main {
+    min-width: 450px;
+}
+
+.guesses-container {
+    width: 50%;
+    margin: auto;
+    background: #aaa;
+}
+
+.keys-container {
+    width: 72px;
+    display: inline-block;
+}
+
+.guess-row {
+    border-bottom: 1px solid rgba(100, 100, 100, 0.6)
+}
+
+.current-guess-container {
+    width: 50%;
+    margin: auto;
+    padding-bottom: 16px;
+    background: #f0f0f0
+}
+.current-guess-container {
+    background: #f0f0f0
+}
+
+button:disabled, .btn:disabled {
+    cursor: not-allowed !important;
+    pointer-events: all !important;
+  }

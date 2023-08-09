@@ -1,0 +1,14 @@
+<div class="text-center" [class.won]="won">
+    <h1 *ngIf="won">Congratulations! You won!</h1>
+    <h2 *ngIf="!won">You lost. Better luck next time!</h2>
+
+    <h3>You took <span class="guesses">{{numberOfGuesses}}</span> guesses.</h3>
+
+    <h3>Your last guess was:</h3>
+    <mm-peg *ngFor="let color of lastGuess" [type]="'code'" [color]="color"></mm-peg>
+
+    <h3>The secret was:</h3>
+    <mm-peg *ngFor="let color of secretColors" [type]="'code'" [color]="color"></mm-peg>
+
+    <button class="btn btn-success btn-block" style="width: 100%" (click)="restart.emit()">Start new game</button>
+</div>
