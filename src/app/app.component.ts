@@ -57,8 +57,8 @@ export class AppComponent {
         for (let i = 0; i < current.length; i++) {
             if (current[i] == secret[i]) {
                 matches++;
-                current.splice(i, i);
-                secret.splice(i, i);
+                current.splice(i, 1);
+                secret.splice(i, 1);
                 i--;
             }
         }
